@@ -1,0 +1,30 @@
+# Dados dos pacientes e resultados
+/data/
+
+# Arquivos genômicos
+*.vcf
+*.vcf.gz
+*.bam
+*.bai
+*.cram
+*.crai
+*.bcf
+*.fastq
+*.fastq.gz
+*.fq.gz
+
+# Arquivos temporários
+__pycache__/
+*.pyc
+*.log
+*.tmp
+*:Zone.Identifier
+
+# Configurações locais
+.env
+.venv/
+.vscode/
+.idea/
+
+# Arquivo GENCODE original (superior ao limite do GitHub)
+/references/gencode.v50.annotation.gtf.gz
