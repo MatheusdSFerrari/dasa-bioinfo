@@ -1,4 +1,4 @@
-O ChatGPT (OpenAI) foi utilizado como ferramenta de apoio à implementação do software desenvolvido para o desafio técnico. Sua contribuição concentrou-se na discussão de alternativas de implementação e na elaboração de comandos e funções em Python.
+O ChatGPT (OpenAI) foi utilizado como ferramenta de apoio à implementação do software desenvolvido para o desafio técnico. As principais consultas envolveram a anotação GENCODE (GRCh38), além da implementação de funções para avaliação automatizada do suporte aos alelos em arquivos BAM, considerando proporções de leituras e critérios de qualidade de mapeamento (MAPQ) e de base (BQ).
 
 A principal estratégia de validação consistiu na execução individual dos comandos sugeridos pela IA diretamente no terminal Linux, antes de sua incorporação ao código definitivo. Os resultados foram comparados com as informações dos arquivos de entrada e com o comportamento esperado de cada operação.
 
