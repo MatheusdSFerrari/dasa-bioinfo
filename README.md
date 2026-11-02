@@ -179,14 +179,6 @@ Campos vazios nas colunas BAM indicam que a métrica não foi calculada.
 - Interpretação clínica: a presença de suporte ALT não constitui, isoladamente, confirmação clínica, classificação de patogenicidade ou diagnóstico.
 - Compatibilidade das referências: diferenças de assembly e de nomenclatura cromossômica podem levar à ausência de resultados ou comparações incorretas.
 
-## Resultados da execução com os dados do desafio
-
-Na execução realizada com os arquivos disponibilizados, foram identificados 62 registros de variantes nos genes de interesse: 45 em FANCA, 8 em HEXA e 9 em TGFBR2.
-
-No BAM filtrado fornecido, 4 variantes apresentaram suporte ALT observado e 58 não apresentaram alinhamentos nos intervalos consultados. Portanto, as 58 variantes não foram classificadas como falsas ou discordantes; elas não puderam ser avaliadas nesse BAM.
-
-Essas quantidades descrevem a execução específica com os arquivos fornecidos, e não representam resultados universais da ferramenta. A análise detalhada, as evidências por variante e a interpretação dos achados devem constar no relatório técnico em PDF.
-
 ## Reprodutibilidade e integridade dos dados
 
 - Utilize a mesma versão da imagem Docker, do `requirements.txt` e da anotação `gencode.v50.annotation.gtf.gz` para reproduzir uma execução.
