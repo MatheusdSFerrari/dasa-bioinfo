@@ -32,7 +32,8 @@ desafio_bioprod/
 ├── README.md                   # informações sobre a ferramenta
 ├── AI_USAGE.md                 # documentação do uso de IA
 ├── references/                 # Arquivo contendo as informações dos genes de interesse para a extração de coordenadas
-│   └── gencode.v50.annotation.gtf.gz
+│   ├── gencode.part-00
+│   └── gencode.part-01
 ├── src/
 │   ├── __init__.py
 │   ├── cli.py                 # interface de linha de comando
@@ -65,6 +66,29 @@ TGFBR2
 ```
 
 O programa também pode receber outros genes presentes no GTF. O arquivo de anotação é lido localmente, e os intervalos são obtidos a partir das entradas do tipo `gene`.
+
+## Anotação genômica GENCODE
+
+A ferramenta utiliza a anotação GENCODE v50, correspondente ao genoma de referência GRCh38, para identificar as coordenadas dos genes informados pelo usuário. A consulta é realizada localmente, sem necessidade de conexão com serviços externos durante a execução.
+
+Devido ao tamanho do arquivo original `gencode.v50.annotation.gtf.gz` (118,76 MB), que ultrapassa o limite de 100 MB por arquivo do GitHub, a anotação foi dividida em duas partes:
+
+```text
+references/
+├── gencode.part-00
+└── gencode.part-01
+```
+
+Durante a construção da imagem Docker, o arquivo original é reconstruído automaticamente por meio do comando:
+
+```dockerfile
+RUN cat references/gencode.part-* > references/gencode.v50.annotation.gtf.gz \
+    && rm references/gencode.part-*
+```
+
+Esse procedimento preserva o conteúdo do arquivo original e permite sua utilização pela ferramenta sem a necessidade de downloads adicionais ou modificações no código Python.
+
+Não é necessário reconstruir manualmente o arquivo GENCODE. A operação é realizada automaticamente durante o `docker build`.
 
 ## Construção da imagem Docker
 
