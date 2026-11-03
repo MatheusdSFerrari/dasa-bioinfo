@@ -1,9 +1,21 @@
-# Dados dos pacientes e resultados
-/data/
+
+# ==========================================
+# Dasa Bioinfo - .gitignore
+# ==========================================
+
+# Dados de entrada e resultados
+# Mantém as pastas, mas ignora seu conteúdo
+/data/input/*
+/data/output/*
+
+# Permite versionar os diretórios vazios
+!/data/input/.gitkeep
+!/data/output/.gitkeep
 
 # Arquivos genômicos
 *.vcf
 *.vcf.gz
+*.gvcf
 *.bam
 *.bai
 *.cram
@@ -11,20 +23,35 @@
 *.bcf
 *.fastq
 *.fastq.gz
+*.fq
 *.fq.gz
+*.pod5
 
-# Arquivos temporários
-__pycache__/
-*.pyc
+# Arquivo GENCODE original
+# As partes gencode.part-* são versionadas
+/references/gencode.v50.annotation.gtf.gz
+
+# Arquivos de resultados e temporários
+*.tsv
+*.csv
 *.log
 *.tmp
-*:Zone.Identifier
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
 
 # Configurações locais
-.env
-.venv/
 .vscode/
 .idea/
+.env
+.env.*
+.DS_Store
+Thumbs.db
 
-# Arquivo GENCODE original (superior ao limite do GitHub)
-/references/gencode.v50.annotation.gtf.gz
+# Metadados do Windows
+*:Zone.Identifier
